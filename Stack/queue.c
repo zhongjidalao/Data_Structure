@@ -6,7 +6,10 @@
 #define TRUE 1
 #define FALSE 0
 
+#define MAXSIZE 1000
+
 typedef int QElemType;
+typedef int Status;
 
 //顺序队列的顺序存储结构
 typedef struct{
@@ -25,7 +28,7 @@ Status InitQueue(SqQueue *Q){
 }
 
 //返回Q的元素个数，也就是队列的当前长度
-it QueueLength(SqQueue Q){
+int QueueLength(SqQueue Q){
 	return (Q.rear-Q.front+MAXSIZE)%MAXSIZE;
 }
 
