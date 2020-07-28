@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * 静态链表
+*/
+
 #define OK 1
 #define ERROR 0
 #define TRUE 1

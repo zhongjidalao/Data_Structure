@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+
 #define linkNum 3//全局设置链表中节点存储数据的个数
+
 typedef struct Link {
     char a[linkNum]; //数据域可存放 linkNum 个数据
     struct Link * next; //代表指针域，指向直接后继元素
@@ -58,4 +60,28 @@ void displayLink(link * head) {
         }
         temp = temp->next;
     }
+}
+
+//朴素的匹配算法
+int Index(String S, String T, int pos){
+    int i = pos;
+    int j = 1;
+
+    while (i <= S[0] && j <= T[0]){
+        if (S[i] == T[j]){
+            ++i;
+            ++j;
+        }else{
+            //如果匹配不到，就从S的第二个和T的第一个开始重新匹配
+            i = i-j+2;
+            j = 1;
+        }
+    }
+
+    if (j > T[0]){
+        return i-T[0];
+    }else{
+        return 0;
+    }
+    
 }
