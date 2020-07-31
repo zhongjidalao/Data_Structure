@@ -22,3 +22,20 @@ void PreOrderTraverse(BiTree T){
     PreOrderTraverse(T->lchild);
     PreOrderTraverse(T->rchild);
 }
+
+//建立一个二叉树
+void CreateBiTree(BiTree *T){
+    TElemType ch;
+    scanf("%c", &ch);
+    if(ch == '#'){
+        *T = NULL;
+    }else{
+        *T = (BiTree)malloc(sizeof(BiTNode));
+        if(!*T){
+            return;
+        }
+        (*T)->data = ch;
+        CreateBiTree(&(*T)->lchild);
+        CreateBiTree(&(*T)->rchild);
+    }
+}

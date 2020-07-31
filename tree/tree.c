@@ -9,7 +9,7 @@ typedef struct PTNode{
     //结点数据
     TElemType data;
     int parent;
-}PTNode;
+} PTNode;
 
 //孩子结点
 typedef struct CTNode{
@@ -21,7 +21,7 @@ typedef struct CTNode{
 typedef struct{
     TElemType data;
     ChildPtr firstchild;
-}CTBox;
+} CTBox;
 
 //树结构
 typedef struct{
@@ -29,10 +29,10 @@ typedef struct{
     CTBox nodes[MAX_TREE_SIZE];
     //根的位置和结点数
     int r,n;
-}CTree;
+} CTree;
 
 //树的孩子兄弟表示法结构定义
 typedef struct CSNode{
     TElemType data;
     struct CSNode *firstchild,*rightsib;
-}CSNode,*CSTree;
+} CSNode, *CSTree;
