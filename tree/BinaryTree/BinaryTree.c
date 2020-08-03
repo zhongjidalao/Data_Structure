@@ -1,6 +1,9 @@
+#define OK 1
+
 typedef enum {Link, Thread} PointerTag;
 
 typedef int TElemType;
+typedef int Status;
 
 typedef struct BiThrNode{
     TElemType data;
@@ -27,4 +30,20 @@ void InThreading(BiThrTree p){
         pre = p;
         InThreading(p->rchild);
     }
+}
+
+Status InOrderTraverse_Thr(BiThrTree T){
+    BiThrTree p;
+
+    p = T->lchild;
+
+    while(p != T){
+        while (p->LTage == Link)
+        {
+            p = p->lchild;
+            printf("%c", p->data);
+        }
+        p = p->rchild;
+    }
+    return OK;
 }
